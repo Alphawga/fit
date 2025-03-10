@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 33% 98%;
+    --foreground: 20 14% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 4%;
+
+    --primary: 122 40% 49%;
+    --primary-foreground: 355 100% 100%;
+
+    --secondary: 28 100% 50%;
+    --secondary-foreground: 355 100% 100%;
+
+    --muted: 60 33% 96%;
+    --muted-foreground: 20 14% 40%;
+
+    --accent: 28 100% 50%;
+    --accent-foreground: 355 100% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 355 100% 100%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 28 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 60 33% 98%;
+
+    --card: 20 14% 4%;
+    --card-foreground: 60 33% 98%;
+
+    --popover: 20 14% 4%;
+    --popover-foreground: 60 33% 98%;
+
+    --primary: 122 40% 49%;
+    --primary-foreground: 355 100% 100%;
+
+    --secondary: 28 100% 50%;
+    --secondary-foreground: 355 100% 100%;
+
+    --muted: 20 14% 14%;
+    --muted-foreground: 20 14% 80%;
+
+    --accent: 28 100% 50%;
+    --accent-foreground: 355 100% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 355 100% 100%;
+
+    --border: 20 14% 14%;
+    --input: 20 14% 14%;
+    --ring: 28 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold;
+  }
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+  h2 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+  h3 {
+    @apply text-xl md:text-2xl leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+
+  .section-spacing {
+    @apply mb-16 md:mb-20;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-white py-3 px-6 rounded-md font-medium uppercase text-center transition-all duration-300 hover:bg-secondary/90 hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-secondary text-secondary py-3 px-6 rounded-md font-medium uppercase text-center transition-all duration-300 hover:bg-secondary hover:text-white hover:shadow-md;
+  }
+
+  .feature-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-6 border border-border/50;
+  }
+
+  .feature-card:hover {
+    @apply transform -translate-y-1;
+  }
+
+  .pricing-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-6 border border-border/50;
+  }
+
+  .pricing-card:hover {
+    @apply transform -translate-y-1;
+  }
+
+  .pricing-card.featured {
+    @apply border-2 border-secondary relative;
+  }
+
+  .testimonial-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm p-6 border border-border/50;
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-in-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
