@@ -70,7 +70,7 @@ export default function Home() {
               </h1>
               <p className="text-muted-foreground mb-6 flex items-center gap-2">
                 <Image 
-                  src="/avatar-placeholder.svg" 
+                  src="/food1.jpg" 
                   alt="User avatar" 
                   width={32} 
                   height={32} 
@@ -104,7 +104,7 @@ export default function Home() {
                 {/* Food and person images */}
                 <div className="relative z-10 h-full flex items-center justify-center">
                   <Image
-                    src="/person-hero-image.svg" 
+                    src="/food2.jpg" 
                     alt="Person enjoying food"
                     width={350}
                     height={350}
@@ -112,7 +112,7 @@ export default function Home() {
                     className="absolute z-20"
                   />
                   <Image
-                    src="/food-hero-image.svg" 
+                    src="/food3.jpg" 
                     alt="Delicious food"
                     width={120}
                     height={120}
@@ -370,7 +370,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 animate-on-scroll">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/food4.jpg"
                 alt="Professional reviewing documents"
                 width={800}
                 height={600}
